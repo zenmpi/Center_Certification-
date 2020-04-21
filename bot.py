@@ -2,14 +2,11 @@ import telebot
 from telebot import types
 from datetime import date, datetime
 import time
-import os.path, fnmatch
+import os.path
 import multiprocessing
 import pymysql
 from config import *
 import shutil
-#import socket
-
-import logging
 
 import smtplib
 from email.mime.multipart import MIMEMultipart

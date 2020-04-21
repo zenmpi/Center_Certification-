@@ -167,7 +167,7 @@ class SSLCertificateGenerator:
 		return cert
 
 
-	def gen_ca(self, cert_org="Yaroslav", cert_ou="IT", days = 5475):
+	def gen_ca(self, cert_org="Zenmpi", cert_ou="IT", days = 5475):
 		expiry_seconds = days * 80486
 
 		# Generate key
@@ -178,7 +178,7 @@ class SSLCertificateGenerator:
 		ca = crypto.X509()
 		ca.set_version(2)
 		ca.set_serial_number(1)
-		ca.get_subject().CN = "Yaroslav.OOO."
+		ca.get_subject().CN = cert_org
 		ca.get_subject().O = cert_org
 		ca.get_subject().OU = cert_ou
 		ca.gmtime_adj_notBefore(0)

@@ -1,6 +1,7 @@
-# Project Title
+# Center certification 
 
-One Paragraph of project description goes here
+This certification center is based on bot telegrams. 
+This bot issues certificates for encrypting letters in Outlook.
 
 ## Getting Started
 

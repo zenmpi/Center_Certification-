@@ -36,34 +36,24 @@ class CertificationBot:
 
     @bot.message_handler(commands=['start'])
     def LaunchBot(message):
-        start.LoadKeyboard(message)
-        #keyboard = telebot.types.ReplyKeyboardMarkup(resize_keyboard=True)
-        #keyboard.add(*[types.KeyboardButton(name) for name in ['Authorization 🔑']])
-        #bot.send_message(message.chat.id, 'Please authorization.', reply_markup=keyboard)
-        #bot.register_next_step_handler(message, start.Authorization)
-    
-    def Authorization(self, message):
-        logger = logging.getLogger('BotApp.Authorization')
+        logger = logging.getLogger('BotApp.LaunchBot')
         get_id = message.from_user.id
-        if message.text == 'Authorization 🔑':
-            try:
-                connect = pymysql.connect(server, login, password, DB)
-                with connect:
-                    cur = connect.cursor()
-                    cur.execute("SELECT id FROM user")
-                    rows = cur.fetchone()
-                    user_id = rows[0]
-
-                if user_id == get_id:
-                    bot.send_message(message.chat.id, 'Authorization was successful\n'+
-                    'Hello - {}'.format(message.from_user.first_name))
-                    start.LoadKeyboard(message)
-                else:
-                    bot.send_message(message.chat.id, 'Access denied 😝')
-
-            except Exception:
-                bot.send_message(message.chat.id, 'The connection to the database server has timed out. Unable to connect by address {}'.format(server))
-                logger.error('The connection to the database server has timed out. Unable to connect by address %s', (server))
+        try:
+            connect = pymysql.connect(server, login, password, DB)
+            with connect:
+                cur = connect.cursor()
+                cur.execute("SELECT id FROM user")
+                rows = cur.fetchone()
+                user_id = rows[0]
+            if user_id == get_id:
+                bot.send_message(message.chat.id, 'Authorization was successful\n'+
+                'Hello - {}'.format(message.from_user.first_name))
+                start.LoadKeyboard(message)
+            else:
+                bot.send_message(message.chat.id, 'Access denied 😝')
+        except Exception:
+            bot.send_message(message.chat.id, 'The connection to the database server has timed out. Unable to connect by address {}'.format(server))
+            logger.error('The connection to the database server has timed out. Unable to connect by address %s', (server))
                    
     def LoadKeyboard(self, message):
         logger = logging.getLogger('BotApp.LoadKeyboard')

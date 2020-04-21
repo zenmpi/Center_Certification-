@@ -3996,3 +3996,16 @@ Traceback (most recent call last):
 TypeError: add_header() takes 3 positional arguments but 4 were given
 
 ERROR:BotApp.DaysBan.Multiprocessing:The connection to the database server has timed out. Unable to connect by address - 192.168.1.103
+INFO:BotApp.Manager.Multiprocessing:Start multiporcessing function Manager
+WARNING:BotApp.Manager.Multiprocessing:Issuance of certificates will occur about 10:30. Please await
+INFO:BotApp.DaysBan.Multiprocessing:This condition started because started today days off.
+ERROR:BotApp.DaysBan.Multiprocessing:The connection to the database server has timed out. Unable to connect by address - 192.168.1.103
+ERROR:BotApp.DaysBan.Multiprocessing:The connection to the database server has timed out. Unable to connect by address - 192.168.1.103
+ERROR:BotApp.DaysBan.Multiprocessing:The connection to the database server has timed out. Unable to connect by address - 192.168.1.103
+INFO:BotApp.Manager.Multiprocessing:Start multiporcessing function Manager
+WARNING:BotApp.Manager.Multiprocessing:Issuance of certificates will occur about 10:30. Please await
+INFO:BotApp.DaysBan.Multiprocessing:This condition started because started today days off.
+ERROR:BotApp.LaunchBot:The connection to the database server has timed out. Unable to connect by address 192.168.1.103
+ERROR:BotApp.DaysBan.Multiprocessing:The connection to the database server has timed out. Unable to connect by address - 192.168.1.103
+ERROR:BotApp.LaunchBot:The connection to the database server has timed out. Unable to connect by address 192.168.1.103
+ERROR:BotApp.LaunchBot:The connection to the database server has timed out. Unable to connect by address 192.168.1.103

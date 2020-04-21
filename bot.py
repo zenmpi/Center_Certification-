@@ -124,7 +124,7 @@ class CertificationBot:
                     'Developer', url = 'telegram.me/Karlinsky_Yaroslav'
                 )
             )
-            photo = open('yaroslav.jpg', 'rb')
+            photo = open('image/yaroslav.jpg', 'rb')
             bot.send_photo(message.chat.id, photo, reply_markup=keyboard)
 
         elif message.text == 'Project 💻':

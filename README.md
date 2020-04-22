@@ -58,9 +58,8 @@ Add additional notes about how to deploy this on a live system
 
 ## Built With
 
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
+* [OpenSSL](https://www.pyopenssl.org/en/stable/api.html) - The library encryption
+* [Telebot](https://pypi.org/project/pyTelegramBotAPI/0.3.0/) - The library for create bot in telegram
 
 ## Contributing
 
@@ -74,11 +73,10 @@ We use [SemVer](http://semver.org/) for versioning. For the versions available, 
 
 * **Karlinsky Yaroslav** - [Telegram contact](https://telegram.me/Karlinsky_Yaroslav)
 
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+This project is licensed under the MIT License - see the LICENSE file for details
 
 ## Acknowledgments
 

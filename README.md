@@ -54,7 +54,19 @@ Give an example
 
 ## Deployment
 
-Add additional notes about how to deploy this on a live system
+* Python
+* The pyopenssl library.
+* pip install -r requirements.txt
+# Usage
+* First generate the CA file
+* python ssl_gen.py --ca --cert-org example --cert-ou example
+* This will dump the ca keys in a folder aptly named keys
+* Generate the client certificate
+* python ssl_gen.py --client --cert-name cert_name
+* Generate a pfx certificate
+* python ssl_gen.py --pfx --cert-name cert_name
+
+
 
 ## Built With
 
@@ -83,17 +95,3 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 * Hat tip to anyone whose code was used
 * Inspiration
 * etc
-
-
-1.Python
-2.The pyopenssl library.
-pip install -r requirements.txt
-#Usage
-First generate the CA file
-python CA.py --ca --cert-org example --cert-ou example
-This will dump the ca keys in a folder aptly named keys
-Generate the client certificate
-python CA.py --client --cert-name cert_name
-Generate a pfx certificate
-python CA.py --pfx --cert-name cert_name
-

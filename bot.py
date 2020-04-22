@@ -32,7 +32,7 @@ class CertificationBot:
     telebot.logging.basicConfig(filename="log/LOG.log", level=logging.INFO)
 
     @bot.message_handler(commands=['start'])
-    def LaunchBot(message):
+    def launch_bot(message):
         logger = logging.getLogger('BotApp.LaunchBot')
         get_id = message.from_user.id
         try:
@@ -52,22 +52,22 @@ class CertificationBot:
             bot.send_message(message.chat.id, 'The connection to the database server has timed out. Unable to connect by address {}'.format(server))
             logger.error('The connection to the database server has timed out. Unable to connect by address %s', (server))
                    
-    def LoadKeyboard(self, message):
+    def load_keyboard(self, message):
         logger = logging.getLogger('BotApp.LoadKeyboard')
         keyboard = telebot.types.ReplyKeyboardMarkup(resize_keyboard=True) # add one_time_keyboar=True remove for a while
         keyboard.add(*[types.KeyboardButton(name) for name in ['Issue certificate 🔐', 'Root certificate 🧾']])
         keyboard.add(*[types.KeyboardButton(name) for name in ['Readme 📄', 'Setting ⚙️']])
         keyboard.add(*[types.KeyboardButton(name) for name in ['Developer 👨‍💻', 'Project 💻', 'Donation 💰']])
-        logger.info('%s function started to work' % (start.LoadKeyboard.__name__))
+        logger.info('%s function started to work' % (start.load_keyboard.__name__))
         bot.send_message(message.chat.id, 'Hello, I am a bot that issues certificates. Issuance of certificates will occur about 10:30. Please await!', reply_markup = keyboard)
 
     @bot.message_handler(content_types=['text'])
-    def ExecutingMenuCommands(message):
+    def executing_menu_commands(message):
         logger = logging.getLogger('BotApp.BOT.ExecutingMenuCommands')
 
         if message.text == 'Issue certificate 🔐':
             bot.send_message(message.chat.id, "Enter your email: ")
-            bot.register_next_step_handler(message, start.ManualIssuanceOfCertificates)
+            bot.register_next_step_handler(message, start.manual_issuanc_of_certificates)
 
         elif message.text == 'Root certificate 🧾':
             bot.send_message(message.chat.id, 'One second, creating cert')
@@ -138,8 +138,8 @@ class CertificationBot:
             bot.send_message(message.chat.id, 'Soon this function will appear, it will be possible to pay for universal cryptocurrency from the developer of Yaroslav Karlinsky')
         
         elif message.text == 'Menu':
-            start.LoadKeyboard(message)
-            logger.info('Return in function %s', (start.LoadKeyboard.__name__))
+            start.load_keyboard(message)
+            logger.info('Return in function %s', (start.load_keyboard.__name__))
             logger.info('User %s exited settings', (message.from_user.first_name))
 
         elif message.text == 'Sign in':
@@ -174,9 +174,9 @@ class CertificationBot:
         elif message.text == 'Add admin':
             bot.send_message(message.chat.id, 'In developing')
         
-    def ManualIssuanceOfCertificates(self, message):
+    def manual_issuanc_of_certificates(self, message):
         logger = logging.getLogger('BotApp.ManualIssuanceOfCertificates')
-        logger.info('Start function - %s', (start.ManualIssuanceOfCertificates.__name__))
+        logger.info('Start function - %s', (start.manual_issuanc_of_certificates.__name__))
         email = message.text
         try:
             connect = pymysql.connect(server, login, password, DB)
@@ -201,12 +201,12 @@ class CertificationBot:
             bot.send_message(message.chat.id, 'Error create certificate for email - {}'.format(email))
             logger.warning('Error create certificate for email - %s', (email))
         
-        start.SendEmailWithAttachment(email)
+        start.send_email_with_attachment(email)
 
 
-    def SendEmailWithAttachment(self, email):
+    def send_email_with_attachment(self, email):
         logger = logging.getLogger('BotApp.SendEmailWithAttachment')
-        logger.info('Start function %s ', (start.SendEmailWithAttachment.__name__))
+        logger.info('Start function %s ', (start.send_email_with_attachment.__name__))
 
         general_email = 'your_email'
         password = 'your_password'
@@ -253,7 +253,7 @@ class CertificationBot:
 #============================================================================================#
 
 
-    def Manager(self):
+    def manager(self):
         logger = logging.getLogger('BotApp.Manager.Multiprocessing')
         logger.info('Start multiporcessing function %s', (start.Manager.__name__))
         print('Issuance of certificates will occur about 10:30. Please await')

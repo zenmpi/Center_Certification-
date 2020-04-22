@@ -58,7 +58,6 @@ Give an example
 * The pyopenssl library.
 * pip install -r requirements.txt
 ### Usage
-* First generate the CA file
 * python ssl_gen.py --ca --cert-org example --cert-ou example
 * This will dump the ca keys in a folder aptly named keys
 * Generate the client certificate

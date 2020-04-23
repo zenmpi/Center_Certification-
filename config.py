@@ -1,5 +1,5 @@
 #config for connect to DB
 server = "your_ip"
-user = "your_name"
+login = "your_login"
 password = "your_password"
 DB = "db_name"

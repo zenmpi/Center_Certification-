@@ -1,6 +1,6 @@
 - - -
 
-**_This project is not actively maintained. Proceed at your own risk!_**
+**_This project is actively supported by the developer. Please, if you have ideas how to improve the project, make changes._**
 
 - - - 
 

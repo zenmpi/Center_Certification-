@@ -1,3 +1,9 @@
+- - -
+
+**_This project is not actively maintained. Proceed at your own risk!_**
+
+- - - 
+
 # Center certification 
 
 This certification center is based on bot telegram. This bot issues certificates for encrypting letters in Outlook. A special library based on openssl has been created. This library can be configured to issue any certificate flesh before issuing a certificate for https encryption. This bot issues certificates automatically the multiprocessing library sprinkles it. Which runs the manager function in the background of all processes.
